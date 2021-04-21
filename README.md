@@ -28,7 +28,3 @@
 ## Group Chat
 
 - [Create/Invitation/Remove/Group Info](/examples/group)
-
-## User Info
-
-- [User Info](/examples/user)
