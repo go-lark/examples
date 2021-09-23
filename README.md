@@ -2,29 +2,32 @@
 
 > Notice: The `appID`, `appSecret`, `email` and other identities are not open to public. To make examples work, you should set them on your own.
 
-## Authentication
+## Notification Bot
 
-- [Authentication](/examples/auth)
+- [Notification](/notification-message)
 
-## Messaging
+## Chat Bot
 
-- [Text Message](/examples/basic-message) (group and personal chat)
-- [@at Message](/examples/at-message) (@at single person and @at all)
-- [Image Message](/examples/image-message)
-- [Group Share Chat](/examples/share-chat)
-- [Rich Text Message](/examples/rich-text-message) (a.k.a Post)
-- [Interactive Message](/examples/interactive-message)
-- [Interactive Message - Hybrid](/examples/interactive-message-hybrid), built message body with [larksuite/botframework-go](https://github.com/larksuite/botframework-go).
+### Authentication
 
-### Notification Bot
+- [Authentication](/auth)
 
-- [Notification](/examples/notification-message)
+### Messaging
 
-## Event Handling
+- [Text Message](/basic-message) (group and personal chat)
+- [@at Message](/at-message) (@at single person and @at all)
+- [Image Message](/image-message)
+- [Group Share Chat](/share-chat)
+- [Rich Text Message](/rich-text-message) (a.k.a Post)
+- [Interactive Message](/interactive-message)
+- [Interactive Message - Hybrid](/interactive-message-hybrid), building message body with [larksuite/botframework-go](https://github.com/larksuite/botframework-go).
 
-- [Gin Middleware](/examples/gin-middleware)
-- [Event Forwarding](/examples/event-forward)
 
-## Group Chat
+### Event Handling
 
-- [Create/Invitation/Remove/Group Info](/examples/group)
+- [Gin Middleware](/gin-middleware)
+- [Event Forwarding](/event-forward)
+
+### Group Chat
+
+- [Create/Invitation/Remove/Group Info](/group)
