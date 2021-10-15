@@ -3,8 +3,8 @@ package main
 import "github.com/go-lark/lark"
 
 const (
-	appID     = "cli_9bb6d51357fe9101"
-	appSecret = "el1PJQTH6WY9ZhRBM5om0gILDy4f2vd8"
+	appID     = "cli_xxxxxx"
+	appSecret = "el1Pxxxxxx"
 )
 
 func main() {
