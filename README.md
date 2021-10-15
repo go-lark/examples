@@ -20,7 +20,6 @@
 - [Group Share Chat](/share-chat)
 - [Rich Text Message](/rich-text-message) (a.k.a Post)
 - [Interactive Message](/interactive-message)
-- [Interactive Message - Hybrid](/interactive-message-hybrid), building message body with [larksuite/botframework-go](https://github.com/larksuite/botframework-go).
 
 
 ### Event Handling
