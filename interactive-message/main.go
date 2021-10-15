@@ -62,6 +62,6 @@ func main() {
 	`
 
 	msg := lark.NewMsgBuffer(lark.MsgInteractive)
-	om := msg.BindEmail("zhangwanlong@bytedance.com").Card(cardContent).Build()
+	om := msg.BindEmail("youremail@example.com").Card(cardContent).Build()
 	bot.PostMessage(om)
 }
