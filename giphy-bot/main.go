@@ -167,7 +167,6 @@ func trendingGiphy(index int) string {
 }
 
 func fetchImage(bot lark.Bot, gifID string) (string, error) {
-	t0 := time.Now().Unix()
 	image, db := imageStore.Get(gifID)
 	if db.Error == nil {
 		if len(image.ImageKey) > 0 {
@@ -175,7 +174,6 @@ func fetchImage(bot lark.Bot, gifID string) (string, error) {
 			return image.ImageKey, nil
 		}
 	}
-	t1 := time.Now().Unix()
 	useProxy := os.Getenv("GIPHY_PROXY")
 	parellelDownload := os.Getenv("GIPHY_PARELLEL_DOWNLOAD")
 	imagePath := fmt.Sprintf("./images/%s.gif", gifID)
@@ -199,22 +197,12 @@ func fetchImage(bot lark.Bot, gifID string) (string, error) {
 			}
 		}
 	}
-	t2 := time.Now().Unix()
 	resp, err := bot.UploadImage(imagePath)
 	if err != nil {
 		fmt.Println(image.ImageKey, "Upload failed")
 		return "", err
 	}
-	t3 := time.Now().Unix()
 	imageStore.Create(gifID, resp.Data.ImageKey)
-	t4 := time.Now().Unix()
-	fmt.Println(
-		gifID,
-		"GetCache:", (t1 - t0),
-		"Download:", (t2 - t1),
-		"Re-Upload:", (t3 - t2),
-		"Store:", (t4 - t3),
-	)
 	return resp.Data.ImageKey, nil
 }
 
