@@ -1,0 +1,6 @@
+*.db
+images/*.gif
+downloader/*.gif
+.DS_Store
+nohup.out
+giphy-bot
