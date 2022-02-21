@@ -11,7 +11,7 @@ import (
 func main() {
 	r := gin.Default()
 	middleware := larkgin.NewLarkMiddleware()
-	middleware.BindURLPrefix("/lark")           // enable prefix binding if you need
+	middleware.BindURLPrefix("/lark/lark")           // enable prefix binding if you need
 	middleware.WithEncryption("<encrypt-key>")  // enable encryption if you need
 	middleware.WithTokenVerification("<token>") // enable token verification if you need
 
