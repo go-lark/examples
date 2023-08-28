@@ -1,3 +1,4 @@
+// Package main image message example
 package main
 
 import (

@@ -1,3 +1,4 @@
+// Package main notification example
 package main
 
 import (

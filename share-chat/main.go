@@ -1,3 +1,4 @@
+// Package main group share example
 package main
 
 import (
@@ -14,6 +15,6 @@ func main() {
 	bot := lark.NewChatBot(appID, appSecret)
 	bot.GetTenantAccessTokenInternal(true)
 	mb := lark.NewMsgBuffer(lark.MsgShareCard)
-	msg := mb.BindEmail(email).ShareChat(groupOpenChatID).Build()
+	msg := mb.BindEmail("youremail@example.com").ShareChat("oc_xxxxx").Build()
 	bot.PostMessage(msg)
 }

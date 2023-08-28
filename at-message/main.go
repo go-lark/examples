@@ -1,3 +1,4 @@
+// Package main at message examples
 package main
 
 import (

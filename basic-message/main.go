@@ -1,3 +1,4 @@
+// Package main basic message examples
 package main
 
 import "github.com/go-lark/lark"

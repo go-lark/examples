@@ -1,3 +1,4 @@
+// Package main group examples
 package main
 
 import (
@@ -13,8 +14,7 @@ const (
 func main() {
 	bot := lark.NewChatBot(appID, appSecret)
 	bot.GetTenantAccessTokenInternal(true)
-	userInfo, _ := bot.GetUserIDByEmail("xxxxxx@example.com")
-	userOpenID := userInfo.OpenID
+	userOpenID := "ou_xxxxx"
 	// CreateGroup
 	groupInfo, _ := bot.CreateGroup("Group Name", "Group Description", []string{userOpenID})
 	groupOpenChatID := groupInfo.OpenChatID

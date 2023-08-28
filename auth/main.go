@@ -1,3 +1,4 @@
+// Package main auth example
 package main
 
 import (

@@ -1,3 +1,4 @@
+// Package main post example
 package main
 
 import "github.com/go-lark/lark"
@@ -17,9 +18,9 @@ func main() {
 		Title("post title").
 		TextTag("hello, world", 1, true).
 		LinkTag("Google", "https://google.com/").
-		AtTag("www", groupOpenChatID).
+		AtTag("www", "oc_xxxxxx").
 		ImageTag("d9f7d37e-c47c-411b-8ec6-9861132e6986", 300, 300).
 		Render()
-	om := msg.BindOpenChatID(groupOpenChatID).Post(postContent).Build()
+	om := msg.BindOpenChatID("oc_xxxxxx").Post(postContent).Build()
 	_, _ = bot.PostMessage(om)
 }
