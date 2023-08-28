@@ -19,7 +19,7 @@
 - [Image Message](/image-message)
 - [Group Share Chat](/share-chat)
 - [Rich Text Message](/rich-text-message) (a.k.a Post)
-- [Interactive Message](/interactive-message)
+- [Interactive Message](/interactive-message) (a.k.a Card)
 
 
 ### Event Handling

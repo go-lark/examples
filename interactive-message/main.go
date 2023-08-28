@@ -1,3 +1,4 @@
+// Package main card example
 package main
 
 import (
@@ -22,6 +23,9 @@ func main() {
 	bot := lark.NewChatBot(appID, appSecret)
 	bot.GetTenantAccessTokenInternal(true)
 	b := lark.NewCardBuilder()
+
+	// 普通卡片
+	// Normal card
 	card := b.Card(
 		b.Div(
 			b.Field(b.Text("左侧内容")).Short(),
@@ -55,5 +59,37 @@ func main() {
 	// card.String() 会将卡片内容渲染成字符串，如构建 CardBuilder 不支持的卡片结构也可以直接传入json串
 	// card.String() will render card content into a json string. You can also use raw json content for unsupported card structures.
 	om := msg.BindEmail("youremail@example.com").Card(card.String()).Build()
+	bot.PostMessage(om)
+
+	// 国际化卡片
+	// Card with I18N
+	i18nCard := b.I18N.
+		Card(
+			b.I18N.WithLocale(
+				lark.LocaleEnUS,
+				b.Div(
+					b.Field(b.Text("English Content")),
+				),
+			),
+			b.I18N.WithLocale(
+				lark.LocaleZhCN,
+				b.Div(
+					b.Field(b.Text("中文内容")),
+				),
+			),
+			b.I18N.WithLocale(
+				lark.LocaleJaJP,
+				b.Div(
+					b.Field(b.Text("日本語コンテンツ")),
+				),
+			),
+		).
+		Title(
+			b.I18N.LocalizedText(lark.LocaleEnUS, "English Title"),
+			b.I18N.LocalizedText(lark.LocaleZhCN, "中文标题"),
+			b.I18N.LocalizedText(lark.LocaleJaJP, "日本語タイトル"),
+		).
+		Red()
+	om = msg.BindEmail("youremail@example.com").Card(i18nCard.String()).Build()
 	bot.PostMessage(om)
 }
