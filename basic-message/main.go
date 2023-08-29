@@ -15,6 +15,7 @@ func main() {
 	bot.PostText("hello from example with email", lark.WithEmail("xxxxxx@example.com"))
 	// Personal Chat, use lark.WithOpenID
 	bot.PostText("hello from example with open_id", lark.WithOpenID("ou_xxxxxx"))
+	bot.PostText("text with formats <b>Bold</b> <i>italic</i> <u>Underline</u> <s>strikethrough</s> [Link](https://bytedance.com/)", lark.WithChatID("oc_xxxxxx"))
 
 	// Group Chat, use lark.WithChatID
 	bot.PostText("hello from example with open_chat_id", lark.WithChatID("oc_xxxxxx"))
