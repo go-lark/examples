@@ -25,6 +25,7 @@
 ### Event Handling
 
 - [Gin Middleware](/gin-middleware)
+- [Hertz Middleware](/hertz-middleware)
 - [Event Forwarding](/event-forward)
 
 ### Group Chat
