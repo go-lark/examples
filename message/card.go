@@ -7,10 +7,6 @@ import (
 	"github.com/go-lark/lark/v2"
 )
 
-// 卡片构造工具 https://open.feishu.cn/tool/cardbuilder
-// 消息卡片元素介绍 https://open.feishu.cn/document/ukTMukTMukTM/uAzMxEjLwMTMx4CMzETM
-// 卡片内的元素可以使用 lark.CardBuilder 的方法创建，通过链式调用设置元素属性
-//
 // You can use https://open.feishu.cn/tool/cardbuilder to build a card body json
 // Refer to https://open.feishu.cn/document/ukTMukTMukTM/uAzMxEjLwMTMx4CMzETM for card elements
 // To create a card/element, use methods of lark.CardBuilder;
@@ -50,12 +46,10 @@ func card(ctx context.Context, bot *lark.Bot) {
 		Wathet().
 		Title("卡片标题 Card Title")
 	msg := lark.NewMsgBuffer(lark.MsgInteractive)
-	// card.String() 会将卡片内容渲染成字符串，如构建 CardBuilder 不支持的卡片结构也可以直接传入json串
 	// card.String() will render card content into a json string. You can also use raw json content for unsupported card structures.
 	om := msg.BindEmail("youremail@example.com").Card(card.String()).Build()
 	bot.PostMessage(ctx, om)
 
-	// 国际化卡片
 	// Card with I18N
 	i18nCard := b.I18N.
 		Card(
