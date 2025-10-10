@@ -2,8 +2,8 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/go-lark/card-builder v1.0.0-beta.2 h1:DfH/14fs+R/G8CC+a2WoIp2wpWoD2isDcBpYZoSLwaU=
 github.com/go-lark/card-builder v1.0.0-beta.2/go.mod h1:7O2nuzjG4Cc/ty0s7Q7roYXOVxt9Gzrw0jBHsuP3UaM=
-github.com/go-lark/lark/v2 v2.0.0-beta.3 h1:LL3wgMLdxThVNrilimApu9m21CoNifoTFOeHWQfTUV0=
-github.com/go-lark/lark/v2 v2.0.0-beta.3/go.mod h1:3kPoA5reEiT0nNBu8F+hdOsMZ7ZHKoQKWkex/vYXT9w=
+github.com/go-lark/lark/v2 v2.0.0-beta.5 h1:GMOaq7rLiteCqZeQJ2WZF6qlknwgW1CsLxLMn/Grhq8=
+github.com/go-lark/lark/v2 v2.0.0-beta.5/go.mod h1:3kPoA5reEiT0nNBu8F+hdOsMZ7ZHKoQKWkex/vYXT9w=
 github.com/joho/godotenv v1.5.1 h1:7eLL/+HRGLY0ldzfGMeQkb7vMd0as4CfYvUVzLqw0N0=
 github.com/joho/godotenv v1.5.1/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
