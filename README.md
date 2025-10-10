@@ -8,15 +8,11 @@
 
 ## Chat Bot
 
-- [Authentication](/auth)
 - [Messaging](/message)
     - [Basic Message](/message/main.go): Text and some shortcuts that wrapped with Message Buffer.
     - [Message Buffer](/message/message_buffer.go): @at, Image, Share Chat, Rich Text (a.k.a Post).
     - [Interactive Message](/message/card.go)
-
-### Chat
-
-- [Chat CRUD](/chat): Create, Add, Remove, and List Chat.
+- [Chat](/chat): Create, Add, Remove, and List Chat.
 
 ### Event Handling
 
