@@ -10,13 +10,13 @@
 
 - [Authentication](/auth)
 - [Messaging](/message)
-    - [Basic Message (Text and shortcuts)](/message/main.go)
-    - [@at, Image, Share Chat, Rich Text (Post)](/message/message_buffer.go)
-    - [Interactive Message (a.k.a Card)](/message/card.go)
+    - [Basic Message](/message/main.go): Text and some shortcuts that wrapped with Message Buffer.
+    - [Message Buffer](/message/message_buffer.go): @at, Image, Share Chat, Rich Text (a.k.a Post).
+    - [Interactive Message](/message/card.go)
 
 ### Chat
 
-- [Create, Add, Remove, and List Chat](/chat)
+- [Chat CRUD](/chat): Create, Add, Remove, and List Chat.
 
 ### Event Handling
 
