@@ -2,13 +2,9 @@
 package main
 
 import (
-	"github.com/go-lark/lark"
-)
+	"context"
 
-// should set your own appID and appSecret
-const (
-	appID     = "cli_xxxxxx"
-	appSecret = "el1Pxxxxxx"
+	"github.com/go-lark/lark/v2"
 )
 
 // 卡片构造工具 https://open.feishu.cn/tool/cardbuilder
@@ -19,9 +15,7 @@ const (
 // Refer to https://open.feishu.cn/document/ukTMukTMukTM/uAzMxEjLwMTMx4CMzETM for card elements
 // To create a card/element, use methods of lark.CardBuilder;
 // Use chained call to set properties of elements, see examples below.
-func main() {
-	bot := lark.NewChatBot(appID, appSecret)
-	bot.GetTenantAccessTokenInternal(true)
+func card(ctx context.Context, bot *lark.Bot) {
 	b := lark.NewCardBuilder()
 
 	// 普通卡片
@@ -59,7 +53,7 @@ func main() {
 	// card.String() 会将卡片内容渲染成字符串，如构建 CardBuilder 不支持的卡片结构也可以直接传入json串
 	// card.String() will render card content into a json string. You can also use raw json content for unsupported card structures.
 	om := msg.BindEmail("youremail@example.com").Card(card.String()).Build()
-	bot.PostMessage(om)
+	bot.PostMessage(ctx, om)
 
 	// 国际化卡片
 	// Card with I18N
@@ -91,5 +85,5 @@ func main() {
 		).
 		Red()
 	om = msg.BindEmail("youremail@example.com").Card(i18nCard.String()).Build()
-	bot.PostMessage(om)
+	bot.PostMessage(ctx, om)
 }

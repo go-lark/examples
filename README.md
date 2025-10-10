@@ -1,37 +1,25 @@
-# Examples of go-lark
+# Examples of go-lark (v2)
 
 > Notice: The `appID`, `appSecret`, `email` and other identities are not open to public. To make examples work, you should set them on your own.
 
 ## Notification Bot
 
-- [Notification](/notification-message)
+- [Notification](/notification)
 
 ## Chat Bot
 
-### Authentication
-
 - [Authentication](/auth)
+- [Messaging](/message)
+    - [Basic Message (Text and shortcuts)](/message/main.go)
+    - [@at, Image, Share Chat, Rich Text (Post)](/message/message_buffer.go)
+    - [Interactive Message (a.k.a Card)](/message/card.go)
 
-### Messaging
+### Chat
 
-- [Text Message](/basic-message) (group and personal chat)
-- [@at Message](/at-message) (@at single person and @at all)
-- [Image Message](/image-message)
-- [Group Share Chat](/share-chat)
-- [Rich Text Message](/rich-text-message) (a.k.a Post)
-- [Interactive Message](/interactive-message) (a.k.a Card)
-
+- [Create, Add, Remove, and List Chat](/chat)
 
 ### Event Handling
 
 - [Gin Middleware](/gin-middleware)
 - [Hertz Middleware](/hertz-middleware)
 - [Event Forwarding](/event-forward)
-
-### Group Chat
-
-- [Create/Invitation/Remove/Group Info](/group)
-
-### Real World Example
-
-- [giphy-bot](/giphy-bot)

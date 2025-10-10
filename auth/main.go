@@ -2,9 +2,10 @@
 package main
 
 import (
+	"context"
 	"fmt"
 
-	"github.com/go-lark/lark"
+	"github.com/go-lark/lark/v2"
 )
 
 // should set your own appID and appSecret
@@ -14,12 +15,12 @@ const (
 )
 
 func main() {
+	ctx := context.Background()
 	bot := lark.NewChatBot(appID, appSecret)
 	// Single-pass authentication, should renew manually
-	resp, err := bot.GetTenantAccessTokenInternal(true)
+	resp, err := bot.GetTenantAccessTokenInternal(ctx)
 	if err == nil {
 		fmt.Println(resp.Expire)
 	}
-	// Automatically renew token
-	bot.StartHeartbeat()
+	// your awesome codes ...
 }
