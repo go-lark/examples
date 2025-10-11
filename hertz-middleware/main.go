@@ -7,7 +7,8 @@ import (
 
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/app/server"
-	"github.com/go-lark/lark-hertz"
+	"github.com/go-lark/lark-hertz/v2"
+	"github.com/go-lark/lark/v2"
 )
 
 func main() {
@@ -22,7 +23,16 @@ func main() {
 		eventGroup.Use(middleware.LarkEventHandler())
 		eventGroup.POST("/", func(c context.Context, ctx *app.RequestContext) {
 			if event, ok := middleware.GetEvent(ctx); ok { // => returns `*lark.EventV2`
-				fmt.Println(event)
+				if event.Header.EventType == lark.EventTypeMessageReceived {
+					if messageReceived, err := event.GetMessageReceived(); err == nil {
+						fmt.Println(messageReceived)
+					}
+				} else if event.Header.EventType == lark.EventTypeUserAdded {
+					if userAdded, err := event.GetUserAdded(); err == nil {
+						fmt.Println(userAdded)
+					}
+				}
+				// ... and other events
 			}
 		})
 	}
