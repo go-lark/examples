@@ -3,11 +3,10 @@ package main
 
 import (
 	"fmt"
-	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/go-lark/lark"
-	larkgin "github.com/go-lark/lark-gin"
+	larkgin "github.com/go-lark/lark-gin/v2"
+	"github.com/go-lark/lark/v2"
 )
 
 func main() {
@@ -20,7 +19,7 @@ func main() {
 	baseGroup := r.Group("/lark")
 	baseGroup.Use(middleware.LarkChallengeHandler())
 
-	// Events v2
+	// Events
 	v2Group := baseGroup.Group("/v2")
 	v2Group.Use(middleware.LarkEventHandler())
 	{
@@ -51,18 +50,6 @@ func main() {
 			}
 		})
 
-	}
-
-	// Legacy event v1
-	v1Group := baseGroup.Group("/v1")
-	v1Group.Use(middleware.LarkMessageHandler())
-	{
-		v1Group.POST("/lark", func(c *gin.Context) {
-			if msg, ok := middleware.GetMessage(c); ok && msg != nil {
-				fmt.Println("Handle the msg:", msg)
-			}
-			c.JSON(http.StatusOK, gin.H{"status": "ok"})
-		})
 	}
 
 	r.Run(":8044")
